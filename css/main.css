@@ -18,7 +18,6 @@ html {
     font-family: "Pretendard Variable", sans-serif;
     height: 100%;
     margin: 0;
-    scroll-behavior: smooth;
     cursor: default;
 }
 
@@ -105,7 +104,7 @@ header.on a {
 
 .logo {
     width: 100%;
-    height: 100vh;
+    height: 1200px;
     background: var(--sub3-color);
     display: flex;
     flex-direction: column;
@@ -116,10 +115,11 @@ header.on a {
 
 .logo .txt_top {
     width: 92%;
-    height: 50px;
+    height: 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    line-height: 150px;
 }
 
 .logo .txt_top p {
@@ -173,19 +173,40 @@ header.on a {
     }
 
     50% {
-        transform: translateY(-50px);
+        transform: translateY(-20px);
     }
 }
 
-.logo img {
+.logo .flower {
+    width: 100%;
+    height: 100%;
     position: absolute;
-    margin: 0 auto;
-    bottom: 0;
-    animation: up 2s forwards;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 200px;
 }
 
-.logo img.on {
-    content: url("../img/flower_after.png");
+.logo .flower img {
+    position: absolute;
+}
+
+.logo img.img_before {
+    opacity: 1;
+    animation: up 2s;
+}
+
+.logo img.img_after {
+    opacity: 0;
+    transition: all 1s;
+}
+
+.logo.on .img_before {
+    opacity: 0;
+}
+
+.logo.on .img_after {
+    opacity: 1;
     z-index: 1;
 }
 
@@ -263,10 +284,20 @@ header.on a {
     }
 }
 
+.logo>p {
+    color: var(--main-color);
+    font-size: 12rem;
+    font-weight: 900;
+    z-index: 1;
+}
+
+.logo p span {
+    color: #000;
+}
+
 
 
 /* introduce */
-
 .introduce {
     width: 100%;
     height: 2500px;
@@ -345,24 +376,24 @@ header.on a {
     font-weight: 700;
 }
 
-.txtaniBox {
+.txtanibox {
     width: 100%;
-    height: 110px;
+    height: 130px;
     overflow: hidden;
     position: absolute;
     top: 650px;
 }
 
-.txtaniBox ul {
+.txtanibox ul {
     width: calc(100% * 6);
     animation: slideIn 30s linear infinite;
     display: flex;
 }
 
-.txtaniBox ul li {
+.txtanibox ul li {
     height: 100%;
     font-family: 'Chillax-Variable';
-    font-size: 10rem;
+    font-size: 12rem;
     font-weight: 500;
     color: #5E5E5E;
     opacity: 70%;
@@ -437,13 +468,18 @@ header.on a {
     transform: rotate(180deg);
     position: relative;
     overflow: hidden;
-
 }
-.introduce .quarters .quarter2 .quarter-circle{
+
+.introduce .quarters .quarter2 .quarter-circle {
     position: absolute;
-    right: 0; top: 0;
-    width: 200%; height: 100%;
+    right: 0;
+    top: 0;
+    width: 200%;
+    height: 100%;
     background: var(--main-color);
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+    transition: transform 0.5s ease-in-out;
 }
 
 .introduce .quarters .quarter2 .txt_box {
@@ -543,13 +579,61 @@ header.on a {
 }
 
 .introduce .quarters .quarter3 .interest .icons li {
+    font-family: 'Chillax-Variable';
     font-size: 3.5rem;
+    font-weight: 500;
 }
 
 .introduce .quarters .quarter3 .interest .icons li img {
     margin-left: 10px;
 }
 
+.introduce .quarters .b_txt_box {
+    width: 50%;
+    height: 500px;
+    position: absolute;
+    top: 1700px;
+    border-radius: 0;
+}
+
+.introduce .quarters .b_txt_box .circles {
+    position: absolute;
+    width: 180px;
+    height: 157px;
+    left: -200px;
+    top: -100px;
+}
+
+.introduce .quarters .b_txt_box .circles div {
+    width: 200px;
+    height: 200px;
+    border-radius: 150px;
+}
+
+.introduce .quarters .b_txt_box .circles .circle1 {
+    background: #000;
+    position: absolute;
+    top: 30px;
+}
+
+.introduce .quarters .b_txt_box .circles .circle2 {
+    background: var(--main-color);
+    position: absolute;
+    left: 50px;
+}
+
+.introduce .quarters .b_txt_box>p {
+    font-family: 'Chillax-Variable';
+    font-size: 7rem;
+    font-weight: 500;
+    color: var(--sub2-color);
+}
+
+.introduce .quarters .b_txt_box>p>span {
+    font-family: "Pretendard Variable", sans-serif;
+    font-size: 3rem;
+    font-weight: 400;
+}
 
 
 /* works */
@@ -602,35 +686,50 @@ header.on a {
 
 .works article .txt_box {
     width: 90%;
-    height: 80%;
+    height: 95%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 }
 
 .works article .txt_box>p {
-    font-size: 3.3rem;
-    font-weight: 400;
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: #fff;
+}
+
+.works article.work2 .txt_box>p {
+    color: #000;
 }
 
 .works article .txt_box>p>span {
+    font-size: 3rem;
     font-weight: 700;
 }
 
 .works article .txt_box .txt {
     width: 100%;
-    height: 90%;
+    height: 80%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 50px;
 }
 
-.works article .txt_box .txt h3 {
-    width: 20%;
+.works article .txt_box .txt .title {
+    width: 30%;
+}
+
+.works article.work1 .txt_box .txt .title h3 {
+    font-size: 8rem;
+}
+
+.works article .txt_box .txt .title h3 {
+    width: 70%;
     font-family: 'Chillax-Variable';
-    font-size: 6rem;
-    font-weight: 600;
+    font-size: 10rem;
+    font-weight: 500;
     color: var(--sub3-color);
+    letter-spacing: 0.5rem;
 }
 
 .works article.work2 .txt_box .txt h3,
@@ -645,7 +744,7 @@ header.on a {
 
 .works article .txt_box .txt .txt_d {
     width: 50%;
-    height: 100%;
+    height: 80%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -653,18 +752,21 @@ header.on a {
 
 .works article .txt_box .txt .txt_d h4 {
     font-size: 4rem;
-    font-weight: 700;
+    font-weight: 600;
     color: var(--sub3-color);
 }
 
-.works article .txt_box .txt .txt_d>p {
-    font-size: 2.5rem;
-    line-height: 2;
-    font-weight: 500;
+.works article .txt_box .txt .txt_d .explain {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.works article.work3 .txt_box .txt .txt_d>p {
-    color: #fff;
+.works article .txt_box .txt .txt_d .explain p {
+    font-size: 2.5rem;
+    font-weight: 400;
 }
 
 .works article .txt_box .txt .txt_d .more {
@@ -680,24 +782,46 @@ header.on a {
     transition: color 1s ease;
 }
 
-.works article.work2 .txt_box .txt .txt_d .more,
-.works article.work2 .txt_box .txt .txt_d .more a {
+.works article .txt_box .txt .txt_d .more a {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.works article .txt_box .txt .txt_d .more a i {
+    font-size: 1rem;
+}
+
+.works article.work2 .txt_box .txt .txt_d .more {
     border-color: #000;
+}
+
+.works article.work2 .txt_box .txt .txt_d .more a {
     color: #000;
 }
 
 .works article .txt_box .txt .txt_d .more a {
     transition: color 1s ease;
     color: #fff;
-    /* pointer-events: auto;  */
 }
 
 .works article .txt_box .txt .txt_d .more:hover {
+    border: none;
     background: #fff;
+}
+
+.works article.work2 .txt_box .txt .txt_d .more:hover {
+    background: var(--main-color);
 }
 
 .works article .txt_box .txt .txt_d .more:hover a {
     color: var(--main-color);
+    font-weight: 600;
+}
+
+.works article.work2 .txt_box .txt .txt_d .more:hover a {
+    color: #fff;
 }
 
 .works article .txt_box .txt .img_box {
@@ -708,6 +832,11 @@ header.on a {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+}
+
+.works article.work3 .txt_box .txt .img_box img {
+    width: 200px;
 }
 
 
@@ -715,19 +844,21 @@ header.on a {
 /* animation */
 .animation {
     width: 100%;
-    height: calc(100vh - 120px);
+    height: 100vh;
     display: flex;
-    margin-top: 200px;
+    position: relative;
+    background: #000;
 }
 
 .animation .left {
     width: 40%;
-    height: 100%;
+    height: calc(100vh - 120px);
     border-radius: 50px;
     background: var(--sub3-color);
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 120px;
 }
 
 .animation .left .txt_box {
@@ -741,7 +872,7 @@ header.on a {
 
 .animation .left .txt_box .title {
     width: 100%;
-    height: auto;
+    height: 20%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -760,16 +891,16 @@ header.on a {
 }
 
 .animation .left .txt_box .txt {
-    width: 355px;
-    height: 300px;
+    width: 100%;
+    height: 50%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 }
 
 .animation .left .txt_box .txt>p {
-    font-size: 2.5rem;
+    font-size: 2.3rem;
     font-weight: 400;
     color: #7B7B7B;
 }
@@ -781,8 +912,8 @@ header.on a {
 }
 
 .animation .left .txt_box .more {
-    width: 460px;
-    height: 90px;
+    width: 100%;
+    height: 15%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -808,27 +939,150 @@ header.on a {
     color: #fff;
 }
 
+
 .animation .right {
     width: 60%;
-    height: 100%;
+    height: calc(100vh - 120px);
+    position: relative;
     border-radius: 50px;
     overflow: hidden;
     cursor: url('../img/cursor.png'), auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 120px;
 }
 
 .animation .right .img_box {
     width: 100%;
     height: 100%;
-    filter: drop-shadow(1);
+    background: #fff;
+    border-radius: 50px;
+    position: relative;
 }
 
-.animation .right .img_box img {
+.animation .right .img_box ul {
+    width: 100%;
+    height: 300%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.animation .right .img_box ul li {
     width: 100%;
     height: 100%;
-    border-radius: 50px;
-    object-fit: cover;
 }
 
+.animation .right .img_box ul li img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 100px;
+    padding: 50px;
+    filter: brightness(0.5);
+    transition: filter 0.3s ease-in-out;
+}
+
+.animation .right .img_box ul li img:hover {
+    filter: brightness(1);
+}
+
+
+
+/* strength */
+.strength {
+    width: 100%;
+    height: calc(100vh - 120px);
+    background: var(--main-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.strength h2 {
+    font-family: 'Chillax-Variable';
+    font-size: 10rem;
+    font-weight: 500;
+    color: #fff;
+    position: absolute;
+    padding: 15px;
+}
+
+.strength h2:first-child {
+    top: 0;
+    left: 0;
+}
+
+.strength h2:last-child {
+    bottom: 0;
+    right: 0;
+}
+
+.strength .contents {
+    width: 90%;
+    height: 70%;
+}
+
+.strength .contents .txt_box {
+    width: 45%;
+    height: 100%;
+}
+
+.strength .contents .txt_box ul {
+    width: 100%;
+    height: 100%;
+}
+
+.strength .contents .txt_box ul li {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.strength .contents .txt_box ul li .txt_box {
+    width: 60%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-weight: 500;
+}
+
+.strength .contents .txt_box ul li .txt_box h3 {
+    font-family: 'Chillax-Variable';
+    font-size: 5rem;
+    color: #fff;
+}
+
+.strength .contents .txt_box ul li .txt_box>p {
+    font-size: 3.5rem;
+    color: #000;
+}
+
+.strength .contents .txt_box ul li .txt_box .txt {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.strength .contents .txt_box ul li .txt_box .txt p {
+    font-size: 3rem;
+    font-weight: 300;
+}
+
+.strength .contents .txt_box ul li .txt_box .txt span {
+    color: #fff;
+}
 
 /* footer */
 footer {

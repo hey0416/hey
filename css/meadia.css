@@ -1,0 +1,16 @@
+@charset "utf-8";
+
+:root {
+    font-size: 10px;
+    /* --main-bg-color: #EE809E;  피그마의 스타일가이드 속성 넣어서 사용가능 var() */
+}
+
+@media screen and (max-width: 1800px) {
+    .logo h1 {
+        font-size: 40rem
+    }
+
+    .logo h1 span {
+        font-size: 40rem;
+    }
+}
