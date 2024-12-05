@@ -489,7 +489,6 @@ header.on a {
     right: 200px;
     color: #000;
     transform: rotate(180deg);
-    border-radius: 0;
 }
 
 .introduce .quarters .quarter2 .txt_box h3 {
@@ -836,9 +835,8 @@ header.on a {
 }
 
 .works article.work3 .txt_box .txt .img_box img {
-    width: 200px;
+    width: 90%;
 }
-
 
 
 /* animation */
@@ -1001,6 +999,7 @@ header.on a {
     justify-content: center;
     align-items: center;
     position: relative;
+    display: none;
 }
 
 .strength h2 {

@@ -45,55 +45,42 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('scroll', () => {
         const scrollY = window.scrollY;
-        const translateX = Math.max(-scrollY / 20, -180); // 채워지는 효과
-        const rotateDeg = Math.min(-360 + scrollY / 90, 0); // 회전 효과
+        const translateX = Math.max(-scrollY / 5, 250);  // 채워지는 효과
+        const rotateDeg = Math.min(-90 + scrollY / 10, -270); // 회전 효과
 
         quarterCircle.style.transform = `translateX(${translateX}px) rotate(${rotateDeg}deg)`;
     });
 
 
     // ** 4. GSAP 애니메이션 설정 **
-    gsap.registerPlugin(ScrollTrigger);
-
-    // ** (1) Animation 섹션의 Left 고정 애니메이션 **
-    gsap.to(".animation .left", {
-        scrollTrigger: {
-            trigger: ".animation",
-            start: "top top",  // 애니메이션 시작 위치
-            end: "+=100",      // 애니메이션 끝 위치
-            pin: true          // 요소 고정
-        }
-    });
-
-    // ** (2) Animation 섹션의 이미지 순차 애니메이션 **
-    const images = document.querySelectorAll(".animation .right .img_box ul li img");
-    const imgBoxHeight = 300; // img_box 높이
+    const images = document.querySelectorAll(".animation .right .img_box img");
+    const imgBoxHeight = 300; // img_box의 높이 vh 단위로 설정
     const numImages = images.length; // 이미지 개수
 
     images.forEach((img, index) => {
-        const sectionHeight = imgBoxHeight / numImages; // 각 이미지의 높이 비율
+        const sectionHeight = imgBoxHeight / numImages; // 이미지 하나당 할당된 높이 비율
         if (index === 0) {
-            gsap.set(img, { opacity: 1, transform: "translateY(0)" }); // 첫 번째 이미지는 고정
+            // 첫 번째 이미지는 고정되자마자 나타나도록 설정
+            gsap.set(img, { opacity: 1, transform: "translateY(0)" });
         } else {
+            // 나머지 이미지는 순차적으로 나타남
             gsap.fromTo(
                 img,
-                { opacity: 0, transform: "translateY(50px)" }, // 초기 상태
                 {
-                    opacity: 1, transform: "translateY(0)", // 나타나는 상태
+                    opacity: 0, // 숨김 상태
+                    transform: "translateY(50px)" // 아래로 이동
+                },
+                {
+                    opacity: 1, // 나타남
+                    transform: "translateY(0)", // 제자리
                     scrollTrigger: {
-                        trigger: ".animation .right .img_box ul",
-                        start: () => `top+=${index * sectionHeight}vh top`,
-                        end: () => `top+=${(index + 1) * sectionHeight}vh top`,
-                        scrub: true, // 스크롤 동기화
+                        trigger: ".animation .right .img_box",
+                        start: () => `top+=${index * sectionHeight}vh top`, // 각 이미지 시작 지점
+                        end: () => `top+=${(index + 1) * sectionHeight}vh top`, // 끝나는 지점
+                        scrub: true // 스크롤 동기화
                     }
                 }
             );
         }
     });
-
-
-
-    // 5. 장점 스와이퍼
-
-
 });
