@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="css/meadia.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -27,6 +28,7 @@
 
     <script src="js/main.js"></script>
     <script src="js/sub.js"></script>
+    <script src="js/card.js"></script>
     <script src="js/works.js" defer></script>
 </head>
 
@@ -40,7 +42,7 @@
                         <li><a href="#main">MAIN</a></li>
                         <li><a href="#work">WORK</a></li>
                         <li><a href="#ani">ANIMATION</a></li>
-                        <li><a href="#redesign">REDESIGN</a></li>
+                        <li><a href="#strength">STRENGTH</a></li>
                         <li><a href="#contact">CONTACT</a></li>
                     </ul>
                 </nav>
@@ -118,8 +120,8 @@
                         <div class="txt_box">
                             <h3>Experience</h3>
                             <ul class="txt">
-                                <li>UIUX 웹앱디자인 (피그마[Figma])<br>
-                                    & 프론트엔드(React.js) 수료</li>
+                                <li>UIUX 웹앱디자인 (피그마[Figma])</li>
+                                <li>& 프론트엔드(React.js) 수료</li>
                                 <li>웹디자인기능사 자격증 취득</li>
                                 <li>GTQ 포토샵 1급</li>
                             </ul>
@@ -162,7 +164,6 @@
 
                 </div> <!-- //.quarters -->
             </div> <!-- //.introduce -->
-
             <section class="works" id="work">
                 <div class="work_wrap">
                     <article class="work1">
@@ -183,8 +184,7 @@
                                         <p>새롭게 설계했습니다.</p>
                                     </div> <!-- //.txt -->
                                     <div class="more">
-                                        <a href="https://www.figma.com/proto/M4gEofJ6vhRviLy1p77yPX/%ED%97%88%EC%9D%80%EC%98%81?page-id=279%3A322&node-id=610-411&node-type=frame&viewport=-753%2C218%2C0.08&t=SoRC4unuHBfQfsU6-1&scaling=min-zoom&content-scaling=fixed"
-                                            target="_blank">more
+                                        <a href="https://hey0416.github.io/koreaheritageservice/" target="_blank">more
                                             detail
                                             <i class="fa-solid fa-circle"></i></a>
                                     </div>
@@ -212,7 +212,7 @@
                                         <p>사용자가 원하는 클래스를 간편하게 선택할 수 있는 플랫폼입니다.</p>
                                     </div>
                                     <div class="more">
-                                        <a href="../heyday/index.html" target="_blank">more
+                                        <a href="https://hey0416.github.io/heyday/" target="_blank">more
                                             detail<i class="fa-solid fa-circle"></i></a>
                                     </div>
                                 </div>
@@ -239,8 +239,7 @@
                                     </div>
                                     <div class="more">
                                         <a href="https://www.figma.com/proto/8GLhfGU3bfvFkbpkN1yeXh/%ED%97%88%EC%9D%80%EC%98%81?page-id=167%3A360&node-id=167-361&node-type=frame&viewport=412%2C439%2C0.11&t=Y8ZAuCCHz5SDMvbX-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=348%3A2194"
-                                            target="_blank">more
-                                            detail
+                                            target="_blank">more detail
                                             <i class="fa-solid fa-circle"></i></a>
                                     </div>
                                 </div>
@@ -269,7 +268,7 @@
                             <p> HTML과 CSS 애니메이션을 활용</p>
                         </div>
                         <div class="more">
-                            <a href="../animation/index.html" target="_blank">more
+                            <a href="https://hey0416.github.io/animation/" target="_blank">more
                                 detail</a>
                             <i class="fa-solid fa-circle"></i>
                         </div>
@@ -284,48 +283,82 @@
                 </div> <!-- right -->
             </section>
 
-            <section class="strength">
+            <section class="strength" id="strength">
                 <h2>STRENGTH</h2>
 
                 <div class="contents">
                     <div class="txt_box">
-                        <ul>
-                            <li class="swiper-slide">
-                                <div class="txt_box">
-                                    <h3>Responsibility</h3>
+                        <div class="txt_box1">
+                            <div class="title">
+                                <h3>Responsibility</h3>
+                                <div class="bg">
                                     <p>책임감</p>
-                                    <div class="txt">
-                                        <p>저는 1년 반 동안 AMD와 MD 업무를 수행하며 행사 준비부터</p>
-                                        <p>실행, 사후 관리까지 책임감을 바탕으로 모든 과정을 꼼꼼하게 이끌어왔습니다.</p>
-                                    </div>
                                 </div>
-                            </li>
-                            <li class="swiper-slide">
-                                <div class="txt_box">
-                                    <h3>Teamwork <span>협력</span></h3>
-                                    <div class="txt">
-                                        <p>팀원들과의 원활한 소통과 협력을 통해 프로젝트를 성공적으로 이끌었습니다.</p>
-                                    </div>
+                            </div>
+                            <div class="sub_txt">
+                                <p>저는 관세법인 에이원에서 AEO 인증 컨설팅을 담당하며,</p>
+                                <p>문서 준비부터 외부기관 협의까지 전 과정을 맡아왔습니다.</p>
+                                <p>서류 준비 및 일정 관리를 통해 고객사의 요구를 충족시켰으며,</p>
+                                <p>모든 단계에서 책임감을 가지고 업무를 진행하였습니다.</p>
+                                <p>이 경험을 통해 맡은 일에 끝까지 책임지는 자세를 키울 수 있었습니다.</p>
+                            </div>
+                        </div>
+                        <div class="txt_box2 ">
+                            <div class="title">
+                                <h3>Communication </h3>
+                                <div class="bg">
+                                    <p>커뮤니케이션</p>
                                 </div>
-                            </li>
-                            <li class="swiper-slide">
-                                <div class="txt_box">
-                                    <h3>Adaptability <span></span></h3>
-                                    <div class="txt">
-                                        <p>새로운 환경에서도 빠르게 적응하며 문제를 해결하는 능력을 발휘했습니다.</p>
-                                    </div>
+                            </div>
+                            <div class="sub_txt">
+                                <p>저는 굿모닝비엔에프에서 1년 반 동안 AMD와 MD의 업무를 하며,</p>
+                                <p>다양한 협력사와의 소통을 통해 프로젝트를 진행했습니다.</p>
+                                <p>각 협력사의 요구사항을 조율하고 조화롭게 협력할 수 있도록 노력했으며,</p>
+                                <p>이를 통해 커뮤니케이션 능력을 키우고 원활한 소통의 가치를 깊이 깨달았습니다.</p>
+                            </div>
+                        </div>
+                        <div class="txt_box3">
+                            <div class="title">
+                                <h3>Adaptability</h3>
+                                <div class="bg">
+                                    <p>적응력</p>
                                 </div>
-                            </li>
-                        </ul>
-                    </div> <!-- //.txt_box -->
+                            </div>
+                            <div class="sub_txt">
+                                <p>일본 어학연수의 경험으로 새로운 환경에서의 적응력을 키웠습니다.</p>
+                                <p>낯선 문화와 언어 속에서도 사람들과 소통하며 학습과 생활을 병행하였고,</p>
+                                <p>다양한 상황에 유연하게 대처하는 법을 배웠습니다.</p>
+                                <p>이 경험은 새로운 환경에서도 빠르게 적응하며 긍정적인 태도로</p>
+                                <p>도전을 받아들이는 데 큰 밑거름이 되었습니다.</p>
+                            </div>
+                        </div>
+                        <div class="txt_box4">
+                            <div class="title">
+                                <h3>Diligent</h3>
+                                <div class="bg">
+                                    <p>성실함</p>
+                                </div>
+                            </div>
+                            <div class="sub_txt">
 
-                    <div class="card">
-                        <ul>
-                            <li class="card1 swiper-slide">R</li>
-                            <li class="card2 swiper-slide">sdf</li>
-                            <li class="card3 swiper-slide">df</li>
+                                <p>저는 신안산대학교 식품생명과학과를 4.05점으로 졸업하며,</p>
+                                <p>주어진 환경에 대한 성실함을 증명했습니다.</p>
+                                <p>이러한 성실함은 이후에도 새로운 지식과 기술을 </p>
+                                <p>꾸준히 배우고 익히는 데 기반이 되었습니다.</p>
+                                <p>앞으로도 성실함을 바탕으로 지속적으로 성장하며,</p>
+                                <p>맡은 일에 최선을 다하겠습니다.</p>
+                            </div>
+                        </div>
+                    </div> <!-- //txt_box -->
+
+                    <div class="card swiper">
+                        <ul class="swiper-wrapper">
+                            <li class="swiper-slide"><img src="img/responsibility.jpg" alt="책임감 이미지"></li>
+                            <li class="swiper-slide"><img src="img/communication.jpg" alt="소통 이미지"></li>
+                            <li class="swiper-slide"><img src="img/adaptability.jpg" alt="적응력 이미지"></li>
+                            <li class="swiper-slide"><img src="img/diligent.jpg" alt="성실함 이미지지"></li>
                         </ul>
-                    </div> <!-- //.card -->
+                    </div>
                 </div> <!-- //.contents -->
 
                 <h2>PERSONALITY</h2>
@@ -335,9 +368,11 @@
 
         <footer id="contact">
             <h3>Contact<br>me.</h3>
+            <img src="img/daisy.png" alt="데이지 꽃 사진">
             <a href="mailto:hey0416@gmail.com"><span>Email: </span>hey0416@gmail.com</a>
         </footer> <!-- //.contact -->
     </div>
+
 </body>
 
 </html>

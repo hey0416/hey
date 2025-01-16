@@ -1,0 +1,1256 @@
+@charset "utf-8";
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@font-face {
+    font-family: 'Chillax-Variable';
+    src: url('../fonts/Chillax-Variable.woff2') format('woff2'),
+        url('../fonts/Chillax-Variable.woff') format('woff'),
+        url('../fonts/Chillax-Variable.ttf') format('truetype');
+    font-weight: 200 700;
+    font-display: swap;
+    font-style: normal;
+}
+
+body,
+html {
+    font-family: "Pretendard Variable", sans-serif;
+    height: 100%;
+    margin: 0;
+    cursor: default;
+}
+
+:root {
+    --main-color: #FF5656;
+    --sub1-color: #A1C398;
+    --sub2-color: #474747;
+    --sub3-color: #FEFDED;
+    font-size: 10px;
+}
+
+.wrap {
+    width: 100%;
+}
+
+
+/* header */
+header {
+    width: 100%;
+    height: 120px;
+    background: var(--sub3-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    transition: background-color 0.3s ease;
+}
+
+header .top {
+    width: 92%;
+    height: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .top h2 {
+    font-size: 5rem;
+    font-weight: 700;
+    color: var(--main-color);
+}
+
+header .top nav {
+    width: 800px;
+    height: 100%;
+}
+
+header .top nav ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .top nav ul li {
+    font-size: 2.7rem;
+    font-weight: 300;
+    color: var(--main-color);
+}
+
+header.on {
+    background: var(--main-color);
+    color: var(--sub3-color);
+}
+
+header a {
+    transition: color 0.3s ease;
+}
+
+header.on a {
+    color: var(--sub3-color);
+}
+
+
+
+/* main */
+
+
+/* logo */
+
+.logo {
+    width: 100%;
+    height: 1200px;
+    background: var(--sub3-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.logo .txt_top {
+    width: 92%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 150px;
+}
+
+.logo .txt_top p {
+    width: 760px;
+    font-size: 3.5rem;
+    font-weight: 500;
+    color: var(--main-color);
+}
+
+.logo .txt_top .circles {
+    width: 840px;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo .txt_top .circles div {
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    position: relative;
+    animation: upAndDown 2s ease-in-out infinite;
+}
+
+.logo .txt_top .circles .circle1 {
+    background: var(--main-color);
+    animation-delay: 0s;
+}
+
+.logo .txt_top .circles .circle2 {
+    background: var(--sub1-color);
+    animation-delay: 0.5s;
+}
+
+.logo .txt_top .circles .circle3 {
+    background: var(--sub2-color);
+    animation-delay: 1s;
+}
+
+.logo .txt_top .circles .circle4 {
+    background: #FA4A15;
+    animation-delay: 1.5s;
+}
+
+@keyframes upAndDown {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.logo .flower {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 200px;
+}
+
+.logo .flower img {
+    position: absolute;
+}
+
+.logo img.img_before {
+    opacity: 1;
+    animation: up 2s;
+}
+
+.logo img.img_after {
+    opacity: 0;
+    transition: all 1s;
+}
+
+.logo.on .img_before {
+    opacity: 0;
+}
+
+.logo.on .img_after {
+    opacity: 1;
+    z-index: 1;
+}
+
+@keyframes up {
+    from {
+        opacity: 0;
+        transform: translateY(1000px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.logo h1 {
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 50rem;
+    font-weight: 900;
+    color: var(--main-color);
+    letter-spacing: 33px;
+    display: inline-block;
+    opacity: 0;
+    animation: foldUp 1.5s forwards;
+}
+
+@keyframes foldUp {
+    0% {
+        transform: translateY(500px) rotateX(150deg);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0) rotateX(0) scale(1);
+        opacity: 1;
+    }
+}
+
+.logo h1 span {
+    display: inline-block;
+}
+
+.logo h1 span:nth-child(1) {
+    animation-delay: 3s;
+    animation: tiltAndTouch 1s ease-in-out 3;
+}
+
+.logo h1 span:nth-child(2) {
+    animation-delay: 1.5s;
+    animation: bounce 1s ease-in-out 3;
+}
+
+@keyframes tiltAndTouch {
+
+    0%,
+    100% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(15deg) translateX(50px);
+    }
+
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(10px);
+    }
+}
+
+.logo>p {
+    color: var(--main-color);
+    font-size: 12rem;
+    font-weight: 900;
+    z-index: 1;
+}
+
+.logo p span {
+    color: #000;
+}
+
+
+
+/* introduce */
+.introduce {
+    width: 100%;
+    height: 2500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.introduce .txt_box_top {
+    width: 85%;
+    height: 240px;
+    margin-top: 200px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.introduce .txt_box_top .title_bar {
+    width: 220px;
+    height: 70px;
+    border-bottom: 3px solid var(--main-color);
+    transform: rotate(90deg);
+    margin-top: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.introduce .txt_box_top .title_bar h2 {
+    font-family: 'Chillax-Variable';
+    font-size: 5rem;
+    font-weight: 600;
+}
+
+.introduce .txt_box_top .circles {
+    position: absolute;
+    width: 180px;
+    height: 157px;
+    left: 900px;
+    top: 130px;
+}
+
+.introduce .txt_box_top .circles div {
+    width: 120px;
+    height: 120px;
+    border-radius: 150px;
+}
+
+.introduce .txt_box_top .circles .circle1 {
+    background: #000;
+    position: absolute;
+    top: 50px;
+}
+
+.introduce .txt_box_top .circles .circle2 {
+    background: var(--main-color);
+    position: absolute;
+    left: 50px;
+}
+
+.introduce .txt_box_top .txt {
+    width: 730px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: end;
+}
+
+.introduce .txt_box_top .txt p {
+    font-size: 5rem;
+}
+
+.introduce .txt_box_top .txt p span {
+    font-weight: 700;
+}
+
+.txtanibox {
+    width: 100%;
+    height: 130px;
+    overflow: hidden;
+    position: absolute;
+    top: 650px;
+}
+
+.txtanibox ul {
+    width: calc(100% * 6);
+    animation: slideIn 30s linear infinite;
+    display: flex;
+}
+
+.txtanibox ul li {
+    height: 100%;
+    font-family: 'Chillax-Variable';
+    font-size: 12rem;
+    font-weight: 500;
+    color: #5E5E5E;
+    opacity: 70%;
+    white-space: nowrap;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.introduce .quarters {
+    margin-top: 120px;
+    position: relative;
+    width: 1400px;
+    height: 1900px;
+}
+
+.introduce .quarters div {
+    width: 50%;
+    height: 700px;
+    border-radius: 0 1000px 0 0;
+    position: absolute;
+}
+
+.introduce .quarters .txt_box h3 {
+    width: 100%;
+    height: 100px;
+    font-family: 'Chillax-Variable';
+    font-size: 7rem;
+    font-weight: 600;
+}
+
+.introduce .quarters .quarter1 {
+    background: #000;
+    opacity: 85%;
+    right: 0;
+}
+
+.introduce .quarters .quarter1 .txt_box {
+    width: 530px;
+    height: 380px;
+    left: 50px;
+    bottom: 0;
+    color: #fFF;
+    border-radius: 0;
+}
+
+.introduce .quarters .quarter1 .txt_box .txt {
+    width: 100%;
+    height: 230px;
+    font-size: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    list-style-type: disc;
+}
+
+.introduce .quarters .quarter2 {
+    /* background: var(--main-color); */
+    left: 0;
+    top: 700px;
+    transform: rotate(180deg);
+    position: relative;
+    overflow: hidden;
+}
+
+.introduce .quarters .quarter2 .quarter-circle {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 200%;
+    height: 100%;
+    background: var(--main-color);
+}
+
+.introduce .quarters .quarter2 .txt_box {
+    width: 100%;
+    height: 400px;
+    bottom: 45px;
+    right: 200px;
+    color: #000;
+    transform: rotate(180deg);
+}
+
+.introduce .quarters .quarter2 .txt_box h3 {
+    width: 100%;
+    height: 100px;
+    font-size: 7rem;
+}
+
+.introduce .quarters .quarter2 .txt_box .txt {
+    width: 1500px;
+    height: 250px;
+    font-size: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    list-style-type: disc;
+}
+
+.introduce .quarters .quarter2 .txt_box .txt li:nth-child(2) {
+    list-style-type: none;
+    padding-left: 70px;
+}
+
+.introduce .quarters .quarter3 {
+    background: var(--sub3-color);
+    left: 700px;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding-left: 120px;
+}
+
+.introduce .quarters .quarter3 .skill {
+    width: 770px;
+    height: 110px;
+    border-radius: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 100px;
+    margin-left: 50px;
+    color: #fff;
+}
+
+.introduce .quarters .quarter3 h3 {
+    font-family: 'Chillax-Variable';
+    font-size: 6.5rem;
+    font-weight: 600;
+}
+
+.introduce .quarters .quarter3 .skill .title_box {
+    width: 190px;
+    height: 70px;
+    border-radius: 20px;
+    background: var(--main-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.introduce .quarters .quarter3 .skill .icons {
+    width: 500px;
+    margin-left: 250px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.introduce .quarters .quarter3 .interest {
+    width: 720px;
+    height: 190px;
+}
+
+.introduce .quarters .quarter3 .interest .title_box {
+    width: 275px;
+    height: 98px;
+    border-bottom: 10px solid var(--main-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.introduce .quarters .quarter3 .interest .icons {
+    width: 100%;
+    height: 55px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 150px;
+}
+
+.introduce .quarters .quarter3 .interest .icons li {
+    font-family: 'Chillax-Variable';
+    font-size: 3.5rem;
+    font-weight: 500;
+}
+
+.introduce .quarters .quarter3 .interest .icons li img {
+    margin-left: 10px;
+}
+
+.introduce .quarters .b_txt_box {
+    width: 50%;
+    height: 500px;
+    position: absolute;
+    top: 1700px;
+    border-radius: 0;
+}
+
+.introduce .quarters .b_txt_box .circles {
+    position: absolute;
+    width: 180px;
+    height: 157px;
+    left: -200px;
+    top: -100px;
+}
+
+.introduce .quarters .b_txt_box .circles div {
+    width: 200px;
+    height: 200px;
+    border-radius: 150px;
+}
+
+.introduce .quarters .b_txt_box .circles .circle1 {
+    background: #000;
+    position: absolute;
+    top: 30px;
+}
+
+.introduce .quarters .b_txt_box .circles .circle2 {
+    background: var(--main-color);
+    position: absolute;
+    left: 50px;
+}
+
+.introduce .quarters .b_txt_box>p {
+    font-family: 'Chillax-Variable';
+    font-size: 7rem;
+    font-weight: 500;
+    color: var(--sub2-color);
+}
+
+.introduce .quarters .b_txt_box>p>span {
+    font-family: "Pretendard Variable", sans-serif;
+    font-size: 3rem;
+    font-weight: 400;
+}
+
+
+/* works */
+.works {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.works .work_wrap {
+    width: 100%;
+    height: 100vh;
+}
+
+.works article {
+    width: 100%;
+    height: 75vh;
+    border-radius: 100px 100px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    opacity: 0;
+    transform: translateY(200px);
+    transition: all 0.7s ease-out;
+    position: absolute;
+    left: 0;
+}
+
+.works article.on {
+    opacity: 1;
+    transform: translateY(0);
+    z-index: 1;
+}
+
+.works article.work1 {
+    background: var(--main-color);
+    bottom: 12vh;
+}
+
+.works article.work2 {
+    background: var(--sub3-color);
+    bottom: 6vh;
+}
+
+.works article.work3 {
+    background: var(--sub1-color);
+    bottom: 0;
+}
+
+.works article .txt_box {
+    width: 90%;
+    height: 95%;
+    display: flex;
+    flex-direction: column;
+}
+
+.works article .txt_box>p {
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: #fff;
+}
+
+.works article.work2 .txt_box>p {
+    color: #000;
+}
+
+.works article .txt_box>p>span {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.works article .txt_box .txt {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.works article .txt_box .txt .title {
+    width: 30%;
+}
+
+.works article.work1 .txt_box .txt .title h3 {
+    font-size: 8rem;
+}
+
+.works article .txt_box .txt .title h3 {
+    width: 70%;
+    font-family: 'Chillax-Variable';
+    font-size: 10rem;
+    font-weight: 500;
+    color: var(--sub3-color);
+    letter-spacing: 0.5rem;
+}
+
+.works article.work2 .txt_box .txt h3,
+.works article.work2 .txt_box .txt .txt_d h4 {
+    color: #000;
+}
+
+.works article.work3 .txt_box .txt h3,
+.works article.work3 .txt_box .txt .txt_d h4 {
+    color: var(--main-color);
+}
+
+.works article .txt_box .txt .txt_d {
+    width: 50%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.works article .txt_box .txt .txt_d h4 {
+    font-size: 4rem;
+    font-weight: 600;
+    color: var(--sub3-color);
+}
+
+.works article .txt_box .txt .txt_d .explain {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.works article .txt_box .txt .txt_d .explain p {
+    font-size: 2.5rem;
+    font-weight: 400;
+}
+
+.works article .txt_box .txt .txt_d .more {
+    width: 250px;
+    height: 60px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 3px solid #fff;
+    border-radius: 100px;
+    cursor: pointer;
+    font-size: 2.5rem;
+    transition: color 1s ease;
+}
+
+.works article .txt_box .txt .txt_d .more a {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.works article .txt_box .txt .txt_d .more a i {
+    font-size: 1rem;
+}
+
+.works article.work2 .txt_box .txt .txt_d .more {
+    border-color: #000;
+}
+
+.works article.work2 .txt_box .txt .txt_d .more a {
+    color: #000;
+}
+
+.works article .txt_box .txt .txt_d .more a {
+    transition: color 1s ease;
+    color: #fff;
+}
+
+.works article .txt_box .txt .txt_d .more:hover {
+    border: none;
+    background: #fff;
+}
+
+.works article.work2 .txt_box .txt .txt_d .more:hover {
+    background: var(--main-color);
+}
+
+.works article .txt_box .txt .txt_d .more:hover a {
+    color: var(--main-color);
+    font-weight: 600;
+}
+
+.works article.work2 .txt_box .txt .txt_d .more:hover a {
+    color: #fff;
+}
+
+.works article .txt_box .txt .img_box {
+    width: 30%;
+    height: 100%;
+    background: #fff;
+    border-radius: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.works article.work3 .txt_box .txt .img_box img {
+    width: 90%;
+}
+
+
+/* animation */
+.animation {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    position: relative;
+    background: var(--sub1-color);
+}
+
+.animation .left {
+    width: 40%;
+    height: calc(100vh - 120px);
+    border-radius: 50px;
+    background: var(--sub3-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 120px;
+}
+
+.animation .left .txt_box {
+    width: 70%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.animation .left .txt_box .title {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Poppins", serif;
+}
+
+.animation .left .txt_box .title h2 {
+    font-size: 7rem;
+    font-weight: 700;
+    color: var(--main-color);
+}
+
+.animation .left .txt_box .title>p {
+    font-size: 3.5rem;
+    font-weight: 500;
+}
+
+.animation .left .txt_box .txt {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.animation .left .txt_box .txt>p {
+    font-size: 2.3rem;
+    font-weight: 400;
+    color: #7B7B7B;
+}
+
+.animation .left .txt_box .txt>p>span {
+    color: #000;
+    font-size: 2.7rem;
+    font-weight: 500;
+}
+
+.animation .left .txt_box .more {
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 2px solid #333;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: 0.7s;
+}
+
+.animation .left .txt_box .more>a {
+    font-family: 'Chillax-Variable';
+    font-size: 3rem;
+    font-weight: 500;
+}
+
+.animation .left .txt_box .more>i {
+    font-size: 1.5rem;
+}
+
+.animation .left .txt_box .more:hover {
+    border: none;
+    background: var(--main-color);
+    color: #fff;
+}
+
+
+/* .animation .right {
+    width: 60%;
+    height: calc(100vh - 120px);
+    position: relative;
+    border-radius: 50px;
+    overflow: hidden;
+    cursor: url('../img/cursor.png'), auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 120px;
+} */
+
+.animation .right {
+    width: 60%;
+    height: calc(100vh - 120px);
+    border-radius: 50px;
+    overflow: hidden;
+    cursor: url('../img/cursor.png'), auto;
+    margin-top: 120px;
+}
+
+/* .animation .right .img_box {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border-radius: 50px;
+    position: relative;
+} */
+.animation .right .img_box {
+    width: 100%;
+    height: 100%;
+}
+
+.animation .right .img_box img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+    object-fit: cover;
+    filter: brightness(0.8);
+    transition: filter 0.3s ease-in-out;
+}
+
+.animation .right .img_box img:hover {
+    filter: brightness(1);
+}
+
+
+/* .animation .right .img_box ul {
+    width: 100%;
+    height: 300%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.animation .right .img_box ul li {
+    width: 100%;
+    height: 100%;
+} 
+
+.animation .right .img_box ul li img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 100px;
+    padding: 50px;
+    filter: brightness(0.5);
+    transition: filter 0.3s ease-in-out;
+}
+
+.animation .right .img_box ul li img:hover {
+    filter: brightness(1);
+} */
+
+
+
+/* strength */
+.strength {
+    width: 100%;
+    height: calc(100vh - 120px);
+    background: var(--main-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.strength h2 {
+    font-family: 'Chillax-Variable';
+    font-size: 10rem;
+    font-weight: 600;
+    color: #fff;
+    position: absolute;
+    padding: 15px;
+}
+
+.strength h2:first-child {
+    top: 0;
+    left: 0;
+}
+
+.strength h2:last-child {
+    bottom: 0;
+    right: 0;
+}
+
+.strength .contents {
+    width: 90%;
+    height: 70%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.strength .contents .txt_box {
+    width: 45%;
+    height: 80%;
+}
+
+.strength .contents .txt_box>div {
+    width: 100%;
+    height: 500px;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    display: none;
+}
+
+.strength .contents .txt_box>div.on {
+    display: flex;
+}
+
+.strength .contents .txt_box>div .title {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.strength .contents .txt_box>div .title h3 {
+    font-family: 'Chillax-Variable';
+    font-size: 5rem;
+    font-weight: 600;
+    color: var(--sub3-color);
+}
+
+.strength .contents .txt_box>div .title .bg {
+    width: auto;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    background: var(--sub3-color);
+    padding: 10px;
+}
+
+.strength .contents .txt_box>div .title .bg p {
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: var(--main-color);
+}
+
+.strength .contents .txt_box>div .sub_txt {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.strength .contents .txt_box>div .sub_txt p {
+    font-size: 2.6rem;
+}
+
+.strength .contents .txt_box {
+    width: 50%;
+    height: 500px;
+}
+
+.strength .contents .card {
+    width: 35%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.strength .contents .card ul {
+    width: 100%;
+    height: 100%;
+
+}
+
+.strength .contents .card ul li {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    cursor: url('../img/cursor2.png'), auto;
+}
+
+.strength .contents .card ul li img {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* footer */
+footer {
+    font-family: 'Chillax-Variable';
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 200px 50px;
+    margin-top: 200px;
+    position: relative;
+}
+
+footer h3 {
+    /* font-family: 'Chillax-Variable'; */
+    /* width: 560px; */
+    font-size: 15rem;
+    /* margin: 120px 0 0 50px; */
+    font-weight: 600;
+}
+
+footer img {
+    position: absolute;
+    width: 200px;
+    left: 450px;
+    top: 400px;
+    animation: rotate 7s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+footer a {
+    font-size: 4.7rem;
+    text-align: right;
+    margin-right: 50px;
+    width: 650px;
+    height: auto;
+    position: absolute;
+    right: 50px;
+}
+
+footer a span {
+    font-weight: 600;
+}
+
+footer .bottom {
+    width: 100%;
+    height: 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #000;
+    padding: 60px;
+}
+
+footer .bottom h2 {
+    font-size: 5rem;
+    font-weight: 700;
+    color: var(--main-color);
+}
+
+footer .bottom nav {
+    width: 800px;
+    height: 100%;
+}
+
+footer .bottom nav ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer .bottom nav ul li {
+    font-size: 2.7rem;
+    font-weight: 300;
+    color: var(--main-color);
+}
+
+header.bottom {
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    width: 100%;
+    background: #000;
+    transition: background-color 0.3s ease, color 0.3s ease, bottom 0.3s ease;
+}
+
+header.bottom a {
+    color: var(--main-color);
+}
