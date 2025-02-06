@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
     //     }
     // });
 
-      //animation
+      // 애니메이션 효과
       let swiper = new Swiper(".right", {
         direction: "vertical",
         slidesPerView: 1,
